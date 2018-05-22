@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
+**uuid** | **str** |  | [optional] 
 **series** | **str** |  | [optional] 
 **number** | **int** |  | [optional] 
 **client_id** | **str** |  | [optional] 

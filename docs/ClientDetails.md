@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **default_discount** | **float** |  | [optional] 
 **client_source** | **str** |  | [optional] 
 **account** | **str** |  | [optional] 
+**addresses** | **list[str]** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

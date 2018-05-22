@@ -28,7 +28,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.ProspectsApi()
-new_prospect = swagger_client.Prospect() # Prospect | 
+new_prospect = swagger_client.NewProspect() # NewProspect | 
 
 try:
     # Agregar Prospecto
@@ -42,7 +42,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **new_prospect** | [**Prospect**](Prospect.md)|  | 
+ **new_prospect** | [**NewProspect**](NewProspect.md)|  | 
 
 ### Return type
 
@@ -123,7 +123,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.ProspectsApi()
-prospect = swagger_client.Prospect() # Prospect | 
+prospect = swagger_client.EditProspect() # EditProspect | 
 
 try:
     # Editar Prospecto
@@ -136,7 +136,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **prospect** | [**Prospect**](Prospect.md)|  | 
+ **prospect** | [**EditProspect**](EditProspect.md)|  | 
 
 ### Return type
 

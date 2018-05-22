@@ -4,11 +4,11 @@ All URIs are relative to *http://api.bind.com.mx*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**invoices_add_invoice**](InvoicesApi.md#invoices_add_invoice) | **POST** /api/Invoices | Agregar factura
-[**invoices_add_payment**](InvoicesApi.md#invoices_add_payment) | **POST** /api/Invoices/Payment | Registrar pago a factura
+[**invoices_add_invoice**](InvoicesApi.md#invoices_add_invoice) | **POST** /api/Invoices | Agregar Venta
+[**invoices_add_payment**](InvoicesApi.md#invoices_add_payment) | **POST** /api/Invoices/Payment | Registrar pago a venta
 [**invoices_delete_invoice**](InvoicesApi.md#invoices_delete_invoice) | **DELETE** /api/Invoices/{id} | Eliminar factura
-[**invoices_get_by_id**](InvoicesApi.md#invoices_get_by_id) | **GET** /api/Invoices/{id} | Obtiene los detalles de una venta
-[**invoices_get_by_number**](InvoicesApi.md#invoices_get_by_number) | **GET** /api/Invoices | Obtiene los detalles de una venta
+[**invoices_get**](InvoicesApi.md#invoices_get) | **GET** /api/Invoices | Obtiene la lista de ventas.
+[**invoices_get_by_number**](InvoicesApi.md#invoices_get_by_number) | **GET** /api/Invoices/{idOrNumber} | Obtiene los detalles de una venta por número
 [**invoices_get_pdf**](InvoicesApi.md#invoices_get_pdf) | **GET** /api/Invoices/{id}/pdf | Obtener el PDF de una venta
 [**invoices_get_xml**](InvoicesApi.md#invoices_get_xml) | **GET** /api/Invoices/{id}/xml | Obtener el XML de una venta
 
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 # **invoices_add_invoice**
 > str invoices_add_invoice(new_invoice)
 
-Agregar factura
+Agregar Venta
 
 
 
@@ -33,7 +33,7 @@ api_instance = swagger_client.InvoicesApi()
 new_invoice = swagger_client.NewInvoice() # NewInvoice | 
 
 try:
-    # Agregar factura
+    # Agregar Venta
     api_response = api_instance.invoices_add_invoice(new_invoice)
     pprint(api_response)
 except ApiException as e:
@@ -64,7 +64,7 @@ No authorization required
 # **invoices_add_payment**
 > invoices_add_payment(new_payment)
 
-Registrar pago a factura
+Registrar pago a venta
 
 
 
@@ -81,7 +81,7 @@ api_instance = swagger_client.InvoicesApi()
 new_payment = swagger_client.NewPayment() # NewPayment | 
 
 try:
-    # Registrar pago a factura
+    # Registrar pago a venta
     api_instance.invoices_add_payment(new_payment)
 except ApiException as e:
     print("Exception when calling InvoicesApi->invoices_add_payment: %s\n" % e)
@@ -155,12 +155,12 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **invoices_get_by_id**
-> InvoiceDetails invoices_get_by_id(id)
+# **invoices_get**
+> InvoiceListItemPage invoices_get(filter=filter, orderby=orderby, top=top, skip=skip)
 
-Obtiene los detalles de una venta
+Obtiene la lista de ventas.
 
-
+El filtro es opcional
 
 ### Example
 ```python
@@ -172,25 +172,31 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.InvoicesApi()
-id = 'id_example' # str | ID
+filter = 'filter_example' # str | Filters the results, based on a Boolean condition. (optional)
+orderby = 'orderby_example' # str | Sorts the results. (optional)
+top = 56 # int | Returns only the first n results. (optional)
+skip = 56 # int | Skips the first n results. (optional)
 
 try:
-    # Obtiene los detalles de una venta
-    api_response = api_instance.invoices_get_by_id(id)
+    # Obtiene la lista de ventas.
+    api_response = api_instance.invoices_get(filter=filter, orderby=orderby, top=top, skip=skip)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling InvoicesApi->invoices_get_by_id: %s\n" % e)
+    print("Exception when calling InvoicesApi->invoices_get: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**str**](.md)| ID | 
+ **filter** | **str**| Filters the results, based on a Boolean condition. | [optional] 
+ **orderby** | **str**| Sorts the results. | [optional] 
+ **top** | **int**| Returns only the first n results. | [optional] 
+ **skip** | **int**| Skips the first n results. | [optional] 
 
 ### Return type
 
-[**InvoiceDetails**](InvoiceDetails.md)
+[**InvoiceListItemPage**](InvoiceListItemPage.md)
 
 ### Authorization
 
@@ -199,14 +205,14 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml
+ - **Accept**: application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **invoices_get_by_number**
-> InvoiceDetails invoices_get_by_number(number)
+> InvoiceDetails invoices_get_by_number(id_or_number)
 
-Obtiene los detalles de una venta
+Obtiene los detalles de una venta por número
 
 
 
@@ -220,11 +226,11 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.InvoicesApi()
-number = 'number_example' # str | Serie y Número
+id_or_number = 'id_or_number_example' # str | 
 
 try:
-    # Obtiene los detalles de una venta
-    api_response = api_instance.invoices_get_by_number(number)
+    # Obtiene los detalles de una venta por número
+    api_response = api_instance.invoices_get_by_number(id_or_number)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling InvoicesApi->invoices_get_by_number: %s\n" % e)
@@ -234,7 +240,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **number** | **str**| Serie y Número | 
+ **id_or_number** | **str**|  | 
 
 ### Return type
 
@@ -252,7 +258,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **invoices_get_pdf**
-> object invoices_get_pdf(id)
+> file invoices_get_pdf(id)
 
 Obtener el PDF de una venta
 
@@ -286,7 +292,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**file**](file.md)
 
 ### Authorization
 
@@ -295,7 +301,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml
+ - **Accept**: application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

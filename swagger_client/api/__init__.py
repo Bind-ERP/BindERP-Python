@@ -17,5 +17,6 @@ from swagger_client.api.products_api import ProductsApi
 from swagger_client.api.prospects_api import ProspectsApi
 from swagger_client.api.providers_api import ProvidersApi
 from swagger_client.api.services_api import ServicesApi
+from swagger_client.api.user_profile_api import UserProfileApi
 from swagger_client.api.warehouses_api import WarehousesApi
 from swagger_client.api.web_hooks_api import WebHooksApi

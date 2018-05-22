@@ -3,8 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**external_id** | **str** |  | [optional] 
-**external_id_type** | **int** |  | [optional] 
 **comment** | **str** |  | 
 **start_date** | **datetime** |  | 
 **end_date** | **datetime** |  | 
@@ -15,6 +13,8 @@ Name | Type | Description | Notes
 **repeat_interval** | **int** |  | [optional] 
 **repeat_type** | **int** |  | [optional] 
 **repetitions** | **int** |  | [optional] 
+**external_id** | **str** |  | [optional] 
+**external_id_type** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

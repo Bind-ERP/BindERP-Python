@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **account_id** | **str** |  | 
 **date** | **datetime** |  | 
 **reference** | **str** |  | 
-**comments** | **str** |  | [optional] 
 **amount** | **float** |  | 
 **payment_term** | **int** |  | 
+**comments** | **str** |  | [optional] 
 **exchange_rate** | **float** |  | [optional] 
 **exchange_rate_account** | **float** |  | [optional] 
 

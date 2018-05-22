@@ -3,12 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] 
-**code** | **str** |  | [optional] 
-**title** | **str** |  | [optional] 
-**currency_id** | **str** |  | [optional] 
-**sat_company_account_id** | **str** |  | [optional] 
-**measurement_unit** | **str** |  | [optional] 
+**id** | **str** |  | 
+**code** | **str** |  | 
+**title** | **str** |  | 
+**currency_id** | **str** |  | 
+**sat_company_account_id** | **str** |  | 
+**measurement_unit** | **str** |  | 
 **description** | **str** |  | [optional] 
 **category1_id** | **str** |  | [optional] 
 **category2_id** | **str** |  | [optional] 

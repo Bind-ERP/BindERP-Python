@@ -4,14 +4,14 @@ All URIs are relative to *http://api.bind.com.mx*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**accounts_add_client**](AccountsApi.md#accounts_add_client) | **POST** /api/Accounts | Agregar Cuenta Contable
+[**accounts_add_account**](AccountsApi.md#accounts_add_account) | **POST** /api/Accounts | Agregar Cuenta Contable
 [**accounts_delete_account**](AccountsApi.md#accounts_delete_account) | **DELETE** /api/Accounts/{id} | Borrar Cuenta Contable
+[**accounts_get**](AccountsApi.md#accounts_get) | **GET** /api/Accounts | Obtiene la lista de cuentas contables.
 [**accounts_get_account_categories**](AccountsApi.md#accounts_get_account_categories) | **GET** /api/AccountCategories | Obtiene las categorías de cuentas contables.
-[**accounts_get_price_lists**](AccountsApi.md#accounts_get_price_lists) | **GET** /api/Accounts | Obtiene la lista de cuentas contables.
 
 
-# **accounts_add_client**
-> str accounts_add_client(new_account)
+# **accounts_add_account**
+> str accounts_add_account(new_account)
 
 Agregar Cuenta Contable
 
@@ -31,10 +31,10 @@ new_account = swagger_client.NewAccount() # NewAccount |
 
 try:
     # Agregar Cuenta Contable
-    api_response = api_instance.accounts_add_client(new_account)
+    api_response = api_instance.accounts_add_account(new_account)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling AccountsApi->accounts_add_client: %s\n" % e)
+    print("Exception when calling AccountsApi->accounts_add_account: %s\n" % e)
 ```
 
 ### Parameters
@@ -107,6 +107,60 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **accounts_get**
+> AccountPage accounts_get(filter=filter, orderby=orderby, top=top, skip=skip)
+
+Obtiene la lista de cuentas contables.
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.AccountsApi()
+filter = 'filter_example' # str | Filters the results, based on a Boolean condition. (optional)
+orderby = 'orderby_example' # str | Sorts the results. (optional)
+top = 56 # int | Returns only the first n results. (optional)
+skip = 56 # int | Skips the first n results. (optional)
+
+try:
+    # Obtiene la lista de cuentas contables.
+    api_response = api_instance.accounts_get(filter=filter, orderby=orderby, top=top, skip=skip)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AccountsApi->accounts_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **str**| Filters the results, based on a Boolean condition. | [optional] 
+ **orderby** | **str**| Sorts the results. | [optional] 
+ **top** | **int**| Returns only the first n results. | [optional] 
+ **skip** | **int**| Skips the first n results. | [optional] 
+
+### Return type
+
+[**AccountPage**](AccountPage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **accounts_get_account_categories**
 > AccountCategories accounts_get_account_categories()
 
@@ -148,60 +202,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json, text/json, application/xml, text/xml
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **accounts_get_price_lists**
-> AccountPage accounts_get_price_lists(filter=filter, orderby=orderby, top=top, skip=skip)
-
-Obtiene la lista de cuentas contables.
-
-
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = swagger_client.AccountsApi()
-filter = 'filter_example' # str | Filters the results, based on a Boolean condition. (optional)
-orderby = 'orderby_example' # str | Sorts the results. (optional)
-top = 56 # int | Returns only the first n results. (optional)
-skip = 56 # int | Skips the first n results. (optional)
-
-try:
-    # Obtiene la lista de cuentas contables.
-    api_response = api_instance.accounts_get_price_lists(filter=filter, orderby=orderby, top=top, skip=skip)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AccountsApi->accounts_get_price_lists: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **filter** | **str**| Filters the results, based on a Boolean condition. | [optional] 
- **orderby** | **str**| Sorts the results. | [optional] 
- **top** | **int**| Returns only the first n results. | [optional] 
- **skip** | **int**| Skips the first n results. | [optional] 
-
-### Return type
-
-[**AccountPage**](AccountPage.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
